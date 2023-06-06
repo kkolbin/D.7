@@ -1,0 +1,16 @@
+{% extends 'news/default.html' %}
+
+{% load static %}
+{% load censor %}
+
+{% block title %}Создание новости/статьи{% endblock %}
+
+{% block content %}
+    <h2>Создание новости</h2>
+    <!-- Форма создания новости -->
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Создать новость</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'articles/default_article.html' %}
+
+{% block title %}Создание статьи{% endblock %}
+
+{% block content %}
+    <h2>Создание статьи</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Создать статью</button>
+    </form>
+{% endblock %}
